@@ -72,6 +72,8 @@ extension VSResultController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VSHistoryCell", for: indexPath) as! VSHistoryCell
         let selectedBarcode  = self.items[indexPath.row];
         cell.setInformationOnView(withItem: selectedBarcode as! VSBarcode)
+        cell.layoutIfNeeded()
+        cell.setNeedsDisplay()
         return cell
         
     }

@@ -71,6 +71,9 @@
                                         <state key="normal" title="Scan Again">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled" title="Scan Again"/>
+                                        <state key="selected" title="Scan Again"/>
+                                        <state key="highlighted" title="Scan Again"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="7"/>
