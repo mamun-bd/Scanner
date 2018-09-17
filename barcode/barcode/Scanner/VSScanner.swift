@@ -15,6 +15,7 @@ class VSScanner: VSXibView {
     var delegate : VSScannerDelegate?
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var overlayView: UIView?
    
     func viewDidAppear() {
         
@@ -33,7 +34,7 @@ class VSScanner: VSXibView {
             captureSession.addOutput(captureMetadataOutput)
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = captureMetadataOutput.availableMetadataObjectTypes
-            self.setupLivePreview()
+            self.setupLiveView()
            
         }
         catch let error  {
@@ -41,7 +42,7 @@ class VSScanner: VSXibView {
         }
     }
     
-    func setupLivePreview() {
+    func setupLiveView() {
         
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer.videoGravity = .resizeAspectFill
@@ -49,6 +50,15 @@ class VSScanner: VSXibView {
         self.layer.addSublayer(self.previewLayer)
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.startScanProcess()
+        }
+        
+        self.overlayView = UIView()
+        
+        if let qrCodeFrameView = self.overlayView {
+            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+            qrCodeFrameView.layer.borderWidth = 2
+            self.addSubview(self.overlayView!)
+            self.bringSubview(toFront: self.overlayView!)
         }
         
     }
@@ -66,6 +76,7 @@ class VSScanner: VSXibView {
         self.captureSession.stopRunning()
     }
     
+
 }
 
 
@@ -74,10 +85,16 @@ extension VSScanner : AVCaptureMetadataOutputObjectsDelegate {
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
         if metadataObjects.count == 0 {
+            self.overlayView?.frame = CGRect.zero
             self.delegate?.didScan(readableObject: "No Scanning object Detected")
         } else {
             let readableObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-            self.delegate?.didScan(readableObject: readableObject.stringValue)
+            let transformedObject =  self.previewLayer.transformedMetadataObject(for: readableObject)
+            self.overlayView?.frame = (transformedObject?.bounds)!
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                self.delegate?.didScan(readableObject: readableObject.stringValue)
+                self.overlayView?.frame = CGRect.zero
+            })
         }
         self.captureSession.stopRunning()
     

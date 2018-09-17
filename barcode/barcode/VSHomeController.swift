@@ -41,9 +41,15 @@ extension VSHomeController : VSScannerDelegate {
     
     func didScan(readableObject information: String?) {
 
-        let controller = VSResultController.initWithStoryboard(withInformation: information)
-        self.present(controller, animated: true) {
-            self.scanner.startScanProcess()
+        let barcode = VSBarcode.init(withName: information, withDate: Date())
+        
+        VSDatabaseManager.shared.addBarcode(withBarcode: barcode) { (barcode) in
+           
+            let controller = VSResultController.initWithStoryboard(withInformation: barcode?.name)
+            self.present(controller, animated: true) {
+                self.scanner.startScanProcess()
+            }
+            
         }
         
     }

@@ -9,7 +9,13 @@
 import UIKit
 
 class VSHistoryCell: UITableViewCell {
+    
+    @IBOutlet weak var lblInformation: UILabel!
+    @IBOutlet weak var lblTime:UILabel!
 
+    var barcode : VSBarcode?
+  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,10 +24,10 @@ class VSHistoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-//    func setInformationOnView(withItem item:MenuModel){
-//        self.menu = item;
-//        self.lblName.text = item.name
-//        
-//    }
+    func setInformationOnView(withItem item:VSBarcode){
+        self.barcode = item;
+        self.lblInformation.text = item.name;
+        self.lblTime.text = item.time?.description
+    }
     
 }

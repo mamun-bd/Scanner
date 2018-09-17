@@ -27,10 +27,21 @@ class VSResultController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initializeTableview()
         self.lblResult.text = self.readableInformation;
+        
+        VSDatabaseManager.shared.getBarcodeList { (barcodes) in
+            if barcodes.count > 0 {
+                DispatchQueue.main.async {
+                    self.items.addObjects(from: barcodes.reversed())
+                    self.resultView.reloadData()
+                }
+            }
+        }
+        
     }
     
-    func initialize() {
+    func initializeTableview() {
 
         self.resultView.register(UINib(nibName: "VSHistoryCell", bundle:nil), forCellReuseIdentifier: "VSHistoryCell");
         self.resultView.separatorStyle = .none
@@ -38,7 +49,7 @@ class VSResultController: UIViewController {
         self.resultView.rowHeight = UITableViewAutomaticDimension
     }
     
-    @objc @IBAction func tryAgainAction(sender: UIButton) {
+    @IBAction func tryAgainAction(sender: UIButton) {
         self.dismiss(animated: true, completion: .none)
     }
     
@@ -59,10 +70,10 @@ extension VSResultController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VSHistoryCell", for: indexPath) as! VSHistoryCell
-        let selectedMenu  = self.items[indexPath.row];
-       // cell.setInformationOnView(withItem: selectedMenu as! MenuModel)
-    
+        let selectedBarcode  = self.items[indexPath.row];
+        cell.setInformationOnView(withItem: selectedBarcode as! VSBarcode)
         return cell
+        
     }
     
 }

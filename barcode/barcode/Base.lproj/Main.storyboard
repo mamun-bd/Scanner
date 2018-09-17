@@ -13,12 +13,12 @@
         <!--Home Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="VSHomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="VSHomeController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSHomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="VSHomeController" customModule="barcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-A8-Ft4" customClass="VSScanner" customModule="Scanner" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-A8-Ft4" customClass="VSScanner" customModule="barcode" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -43,13 +43,13 @@
         <!--Result Controller-->
         <scene sceneID="7CB-26-HLS">
             <objects>
-                <viewController storyboardIdentifier="VSResultController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wl0-p4-NG7" customClass="VSResultController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSResultController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wl0-p4-NG7" customClass="VSResultController" customModule="barcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eXE-pQ-W30">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fv2-ay-5dM">
-                                <rect key="frame" x="0.0" y="306" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-7p-BAZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
@@ -91,18 +91,31 @@
                                     <constraint firstAttribute="bottom" secondItem="RzH-cJ-Dk5" secondAttribute="bottom" constant="20" id="qcE-Ox-XkW"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U1q-Fm-3GJ">
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wl0-p4-NG7" id="VgJ-z3-gd6"/>
+                                    <outlet property="delegate" destination="Wl0-p4-NG7" id="Ety-vF-3iB"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="U1q-Fm-3GJ" firstAttribute="top" secondItem="fv2-ay-5dM" secondAttribute="bottom" id="1pc-C7-GZV"/>
                             <constraint firstItem="yEI-F0-bHK" firstAttribute="trailing" secondItem="fv2-ay-5dM" secondAttribute="trailing" id="8cG-pq-N4N"/>
                             <constraint firstItem="fv2-ay-5dM" firstAttribute="centerX" secondItem="yEI-F0-bHK" secondAttribute="centerX" id="BXz-6a-KCl"/>
+                            <constraint firstItem="fv2-ay-5dM" firstAttribute="top" secondItem="yEI-F0-bHK" secondAttribute="top" constant="30" id="C5V-au-O9i"/>
+                            <constraint firstItem="yEI-F0-bHK" firstAttribute="bottom" secondItem="U1q-Fm-3GJ" secondAttribute="bottom" id="JBq-c3-UpO"/>
+                            <constraint firstItem="U1q-Fm-3GJ" firstAttribute="trailing" secondItem="yEI-F0-bHK" secondAttribute="trailing" id="Mfz-Ke-jfh"/>
+                            <constraint firstItem="U1q-Fm-3GJ" firstAttribute="leading" secondItem="yEI-F0-bHK" secondAttribute="leading" id="N3t-cs-uqU"/>
                             <constraint firstItem="fv2-ay-5dM" firstAttribute="leading" secondItem="yEI-F0-bHK" secondAttribute="leading" id="oeW-q1-lai"/>
-                            <constraint firstItem="fv2-ay-5dM" firstAttribute="centerY" secondItem="yEI-F0-bHK" secondAttribute="centerY" id="wZi-9z-CL6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEI-F0-bHK"/>
                     </view>
                     <connections>
                         <outlet property="lblResult" destination="bqq-7p-BAZ" id="doC-1Y-taZ"/>
+                        <outlet property="resultView" destination="U1q-Fm-3GJ" id="Scw-QI-jSY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B4-j9-yUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
