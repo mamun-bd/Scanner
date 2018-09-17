@@ -1,24 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSHomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="VSHomeController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-A8-Ft4" customClass="VSScanner" customModule="Scanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vwU-A8-Ft4" secondAttribute="trailing" id="NGp-LS-dEn"/>
+                            <constraint firstAttribute="bottom" secondItem="vwU-A8-Ft4" secondAttribute="bottom" id="XwF-4b-RPa"/>
+                            <constraint firstItem="vwU-A8-Ft4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cvc-jY-4Nq"/>
+                            <constraint firstItem="vwU-A8-Ft4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uhD-bd-ZhL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scanner" destination="vwU-A8-Ft4" id="mHi-oH-mtd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="108" y="36"/>
+        </scene>
+        <!--Result Controller-->
+        <scene sceneID="7CB-26-HLS">
+            <objects>
+                <viewController storyboardIdentifier="VSResultController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wl0-p4-NG7" customClass="VSResultController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eXE-pQ-W30">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fv2-ay-5dM">
+                                <rect key="frame" x="0.0" y="306" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-7p-BAZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="ZwL-T0-SC0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-cJ-Dk5">
+                                        <rect key="frame" x="145" y="20" width="85" height="35"/>
+                                        <color key="backgroundColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="quv-Ve-gJy"/>
+                                            <constraint firstAttribute="height" constant="35" id="rq2-O8-Mru"/>
+                                        </constraints>
+                                        <state key="normal" title="Scan Again">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tryAgainActionWithSender:" destination="Wl0-p4-NG7" eventType="touchUpInside" id="edB-fz-rcS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bqq-7p-BAZ" firstAttribute="leading" secondItem="fv2-ay-5dM" secondAttribute="leading" id="46o-qU-JdD"/>
+                                    <constraint firstItem="RzH-cJ-Dk5" firstAttribute="top" secondItem="bqq-7p-BAZ" secondAttribute="bottom" constant="20" id="5ER-vJ-M5O"/>
+                                    <constraint firstItem="RzH-cJ-Dk5" firstAttribute="centerX" secondItem="fv2-ay-5dM" secondAttribute="centerX" id="8y1-eo-YcQ"/>
+                                    <constraint firstItem="bqq-7p-BAZ" firstAttribute="top" secondItem="fv2-ay-5dM" secondAttribute="top" id="MNq-Rm-xrW"/>
+                                    <constraint firstAttribute="trailing" secondItem="bqq-7p-BAZ" secondAttribute="trailing" id="SY7-jb-hfD"/>
+                                    <constraint firstAttribute="bottom" secondItem="RzH-cJ-Dk5" secondAttribute="bottom" constant="20" id="qcE-Ox-XkW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yEI-F0-bHK" firstAttribute="trailing" secondItem="fv2-ay-5dM" secondAttribute="trailing" id="8cG-pq-N4N"/>
+                            <constraint firstItem="fv2-ay-5dM" firstAttribute="centerX" secondItem="yEI-F0-bHK" secondAttribute="centerX" id="BXz-6a-KCl"/>
+                            <constraint firstItem="fv2-ay-5dM" firstAttribute="leading" secondItem="yEI-F0-bHK" secondAttribute="leading" id="oeW-q1-lai"/>
+                            <constraint firstItem="fv2-ay-5dM" firstAttribute="centerY" secondItem="yEI-F0-bHK" secondAttribute="centerY" id="wZi-9z-CL6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yEI-F0-bHK"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblResult" destination="bqq-7p-BAZ" id="doC-1Y-taZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5B4-j9-yUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.79999999999995" y="29.23538230884558"/>
         </scene>
     </scenes>
 </document>

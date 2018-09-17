@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		20433289214F460C0062ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20433288214F460C0062ECC7 /* AppDelegate.swift */; };
-		2043328B214F460C0062ECC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043328A214F460C0062ECC7 /* ViewController.swift */; };
 		2043328E214F460C0062ECC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2043328C214F460C0062ECC7 /* Main.storyboard */; };
 		20433291214F460C0062ECC7 /* barcode.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2043328F214F460C0062ECC7 /* barcode.xcdatamodeld */; };
 		20433293214F460E0062ECC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20433292214F460E0062ECC7 /* Assets.xcassets */; };
 		20433296214F460E0062ECC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20433294214F460E0062ECC7 /* LaunchScreen.storyboard */; };
+		204332A1214F46740062ECC7 /* VSHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043329E214F46740062ECC7 /* VSHistoryCell.swift */; };
+		204332A2214F46740062ECC7 /* VSHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2043329F214F46740062ECC7 /* VSHistoryCell.xib */; };
+		204332A3214F46740062ECC7 /* VSResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204332A0214F46740062ECC7 /* VSResultController.swift */; };
+		204332AA214F46790062ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204332A5214F46790062ECC7 /* UIView+Extension.swift */; };
+		204332AB214F46790062ECC7 /* VSScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204332A6214F46790062ECC7 /* VSScanner.swift */; };
+		204332AC214F46790062ECC7 /* VSScanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204332A7214F46790062ECC7 /* VSScanner.xib */; };
+		204332AD214F46790062ECC7 /* VSScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204332A8214F46790062ECC7 /* VSScannerDelegate.swift */; };
+		204332AE214F46790062ECC7 /* VSXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204332A9214F46790062ECC7 /* VSXibView.swift */; };
+		204332B0214F46830062ECC7 /* VSHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204332AF214F46830062ECC7 /* VSHomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20433285214F460C0062ECC7 /* barcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20433288214F460C0062ECC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2043328A214F460C0062ECC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2043328D214F460C0062ECC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20433290214F460C0062ECC7 /* barcode.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = barcode.xcdatamodel; sourceTree = "<group>"; };
 		20433292214F460E0062ECC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20433295214F460E0062ECC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20433297214F460E0062ECC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2043329E214F46740062ECC7 /* VSHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSHistoryCell.swift; sourceTree = "<group>"; };
+		2043329F214F46740062ECC7 /* VSHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSHistoryCell.xib; sourceTree = "<group>"; };
+		204332A0214F46740062ECC7 /* VSResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSResultController.swift; sourceTree = "<group>"; };
+		204332A5214F46790062ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		204332A6214F46790062ECC7 /* VSScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSScanner.swift; sourceTree = "<group>"; };
+		204332A7214F46790062ECC7 /* VSScanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSScanner.xib; sourceTree = "<group>"; };
+		204332A8214F46790062ECC7 /* VSScannerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSScannerDelegate.swift; sourceTree = "<group>"; };
+		204332A9214F46790062ECC7 /* VSXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSXibView.swift; sourceTree = "<group>"; };
+		204332AF214F46830062ECC7 /* VSHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSHomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				20433288214F460C0062ECC7 /* AppDelegate.swift */,
-				2043328A214F460C0062ECC7 /* ViewController.swift */,
+				204332AF214F46830062ECC7 /* VSHomeController.swift */,
+				204332A4214F46790062ECC7 /* Scanner */,
+				2043329D214F46740062ECC7 /* ScanOutput */,
 				2043328C214F460C0062ECC7 /* Main.storyboard */,
 				20433292214F460E0062ECC7 /* Assets.xcassets */,
 				20433294214F460E0062ECC7 /* LaunchScreen.storyboard */,
@@ -65,6 +83,28 @@
 				2043328F214F460C0062ECC7 /* barcode.xcdatamodeld */,
 			);
 			path = barcode;
+			sourceTree = "<group>";
+		};
+		2043329D214F46740062ECC7 /* ScanOutput */ = {
+			isa = PBXGroup;
+			children = (
+				2043329E214F46740062ECC7 /* VSHistoryCell.swift */,
+				2043329F214F46740062ECC7 /* VSHistoryCell.xib */,
+				204332A0214F46740062ECC7 /* VSResultController.swift */,
+			);
+			path = ScanOutput;
+			sourceTree = "<group>";
+		};
+		204332A4214F46790062ECC7 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				204332A5214F46790062ECC7 /* UIView+Extension.swift */,
+				204332A6214F46790062ECC7 /* VSScanner.swift */,
+				204332A7214F46790062ECC7 /* VSScanner.xib */,
+				204332A8214F46790062ECC7 /* VSScannerDelegate.swift */,
+				204332A9214F46790062ECC7 /* VSXibView.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				20433296214F460E0062ECC7 /* LaunchScreen.storyboard in Resources */,
+				204332A2214F46740062ECC7 /* VSHistoryCell.xib in Resources */,
 				20433293214F460E0062ECC7 /* Assets.xcassets in Resources */,
+				204332AC214F46790062ECC7 /* VSScanner.xib in Resources */,
 				2043328E214F460C0062ECC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2043328B214F460C0062ECC7 /* ViewController.swift in Sources */,
+				204332AD214F46790062ECC7 /* VSScannerDelegate.swift in Sources */,
+				204332AA214F46790062ECC7 /* UIView+Extension.swift in Sources */,
+				204332AB214F46790062ECC7 /* VSScanner.swift in Sources */,
+				204332A1214F46740062ECC7 /* VSHistoryCell.swift in Sources */,
+				204332AE214F46790062ECC7 /* VSXibView.swift in Sources */,
 				20433291214F460C0062ECC7 /* barcode.xcdatamodeld in Sources */,
+				204332A3214F46740062ECC7 /* VSResultController.swift in Sources */,
 				20433289214F460C0062ECC7 /* AppDelegate.swift in Sources */,
+				204332B0214F46830062ECC7 /* VSHomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
